@@ -1,0 +1,54 @@
+{
+  "name": "@template/typescript",
+  "version": "6.6.2",
+  "description": "Use an example of TypeScript.",
+  "private": true,
+  "scripts": {
+    "start": "kkt start",
+    "build": "kkt build",
+    "test": "kkt test --env=jsdom",
+    "test:coverage": "kkt test --env=jsdom --coverage",
+    "type": "npm run t:cjs && npm run t:esm",
+    "t:esm": "lerna exec --scope @ahwui/* -- tsbb types --outDir lib/esm --target ESNEXT",
+    "t:cjs": "lerna exec --scope @ahwui/* -- tsbb types --outDir lib/cjs --target ESNEXT",
+    "b:css": "lerna exec --scope @ahwui/* -- compile-less -d src -o lib/esm",
+    "b:lib": "lerna exec --scope @ahwui/* -- tsbb build --target react",
+    "watch": "lerna exec --scope @ahwui/* -- tsbb watch --target react",
+    "b": "npm run b:lib && npm run type && npm run b:css",
+    "clean": "lerna clean",
+    "publish": "lerna publish from-package"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kktjs/kkt.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "compile-less-cli": "^1.6.0",
+    "react": "17.0.1",
+    "react-dom": "17.0.1",
+    "tsbb": "^2.0.5",
+    "web-vitals": "1.1.0"
+  },
+  "devDependencies": {
+    "@kkt/less-modules": "6.6.2",
+    "@types/jest": "24.9.1",
+    "@types/react": "17.0.0",
+    "@types/react-dom": "17.0.0",
+    "kkt": "6.6.2",
+    "lerna": "^3.22.1"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
