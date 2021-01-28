@@ -1,6 +1,6 @@
 {
-  "name": "@template/typescript",
-  "version": "6.6.2",
+  "name": "ahwui",
+  "version": "0.0.1",
   "description": "Use an example of TypeScript.",
   "private": true,
   "scripts": {
@@ -20,9 +20,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/kktjs/kkt.git"
+    "url": "https://github.com/ybuiw/ahwui.git"
   },
-  "author": "",
+  "author": "uub",
   "license": "MIT",
   "dependencies": {
     "compile-less-cli": "^1.6.0",
