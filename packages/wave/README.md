@@ -11,7 +11,7 @@ npm install --save @ahwui/react-wave
 ### 引入
 
 ```jsx
-import Button from '@ahwui/react-wave';
+import Wave from '@ahwui/react-wave';
 ```
 
 ### 基本用法
