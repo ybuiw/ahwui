@@ -1,6 +1,6 @@
-react wave 按钮
+react wave
 ===
-球星波浪。
+水波进度球组件。
 
 ### 安装
 
