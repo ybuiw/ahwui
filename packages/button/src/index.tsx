@@ -22,6 +22,7 @@ export interface IButtonProps {
 const Button = (props: IButtonProps) => {
   const prefixCls: string = 'i-btn';
   const {
+    style,
     type,
     size,
     active,
@@ -46,16 +47,16 @@ const Button = (props: IButtonProps) => {
     block ? 'block' : false
   ].filter(Boolean).join(' ');
   return (
-    <button {...others} type={htmlType} disabled={disabled || loading} className={cls}>
+    <button style={style} {...others} type={htmlType} disabled={disabled || loading} className={cls}>
       {loading &&
         <span className="loadding"></span>
       }
       {children &&
         React.Children.map(children, (child) => {
           if (React.isValidElement(child)) return child;
-            return (
-              <span> {child} </span>
-            );
+          return (
+            <span> {child} </span>
+          );
         })}
     </button>
   )

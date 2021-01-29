@@ -1,28 +1,18 @@
 import React from 'react';
-import { Button } from '../components';
+import { Wave } from '../components';
 import './App.css';
 
 const App = () => (
   <div className="App">
     <header className="App-header">
       <div>
-        <Button type="success" size="large">
-          主要按钮
-        </Button>
-        <Button icon="chrome" type="success" link loading>
-          成功按钮
-        </Button>
-        <Button icon="taobao" type="warning" link loading>
-          警告按钮
-        </Button>
-        <Button type="danger">错误按钮</Button>
-        <Button icon="chrome" type="light">
-          亮按钮
-        </Button>
-        <Button icon="apple" type="dark">
-          暗按钮
-        </Button>
-        <Button type="dark">暗按钮</Button>
+        {/* <Wave radius={50} progress={70} color={['#FF9745', '#4C94FF']} /> */}
+        <Wave radius={70} progress={70} min={0} color={['#4C94FF', '#ff0000']}>
+          <>
+            <div>补贴资金剩余</div>
+            <div>70%</div>
+          </>
+        </Wave>
       </div>
     </header>
   </div>
