@@ -16,7 +16,7 @@ export interface IButtonProps {
   htmlType?: 'button' | 'submit' | 'reset';
   type?: Type;
   size?: Size;
-  children: JSX.Element | string;
+  children: React.ReactNode | string;
 }
 
 const Button = (props: IButtonProps) => {

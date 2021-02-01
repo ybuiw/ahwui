@@ -107,7 +107,7 @@ const Wave = (props: IWaveProps) => {
       ctx.fill();
     }
 
-  }, [waveRef.current])
+  }, [waveRef.current, props.progress])
 
   return (
     <div className="i--wave" style={{ width: `${radius * 2}px`, height: `${radius * 2}px` }}>
