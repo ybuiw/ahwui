@@ -1,7 +1,7 @@
 {
-  "name": "@ahwui/react-button",
-  "version": "0.0.4",
-  "description": "Button component",
+  "name": "@ahwui/react-input",
+  "version": "0.0.1",
+  "description": "Input Progress component",
   "main": "lib/cjs/index.js",
   "module": "lib/esm/index.js",
   "repository": {
@@ -10,11 +10,11 @@
   },
   "keywords": [
     "react",
-    "react-button",
-    "react button",
-    "ahwui react-button",
-    "ahwui react button",
-    "ahwui button"
+    "react-input",
+    "react input",
+    "ahwui react-input",
+    "ahwui react input",
+    "ahwui input"
   ],
   "publishConfig": {
     "access": "public"
