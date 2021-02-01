@@ -1,6 +1,6 @@
-react wave
+react input
 ===
-水波进度球组件。
+基础input输入框封装。
 
 ### 安装
 
@@ -11,7 +11,7 @@ npm install --save @ahwui/react-input
 ### 引入
 
 ```jsx
-import Wave from '@ahwui/react-input';
+import Input from '@ahwui/react-input';
 ```
 
 ### 基本用法
