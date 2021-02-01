@@ -11,7 +11,7 @@ npm install --save @ahwui/react-input
 ### 引入
 
 ```jsx
-import Wave from '@ahwui/react-input';
+import Input from '@ahwui/react-input';
 ```
 
 ### 基本用法
