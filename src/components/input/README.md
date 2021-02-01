@@ -1,6 +1,6 @@
-react wave
+react input
 ===
-水波进度球组件。
+基础input输入框封装。
 
 ### 安装
 
