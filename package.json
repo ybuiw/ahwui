@@ -4,7 +4,7 @@
   "description": "Use an example of TypeScript.",
   "private": true,
   "scripts": {
-    "start": "kkt start",
+    "start": "cross-env PORT=60000 kkt start",
     "build": "kkt build",
     "test": "kkt test --env=jsdom",
     "test:coverage": "kkt test --env=jsdom --coverage",

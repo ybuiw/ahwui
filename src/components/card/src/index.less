@@ -1,0 +1,36 @@
+.i--card {
+  background: #fff;
+  font-size: 14px;
+  border: 1px solid #f0f0f0;
+  border-radius: 2px;
+  &.i--card-hover {
+    transition: all 0.5s;
+    &:hover {
+      box-shadow: 0 0 20px rgba(189, 189, 189, 0.6);
+    }
+  }
+}
+
+.i--card-head {
+  display: flex;
+  align-items: center;
+  padding: 15px 20px;
+  min-height: 48px;
+  box-sizing: border-box;
+  font-size: 16px;
+  .i--card-head-title {
+    flex: 1;
+    text-align: left;
+    font-weight: 500;
+  }
+}
+.i--card-cover > *{
+  width: 100%;
+  display: block;
+}
+
+.i--card-body {
+  text-align: left;
+  padding: 20px;
+  border-top: 1px solid #f0f0f0;
+}
