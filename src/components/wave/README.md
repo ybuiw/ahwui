@@ -47,5 +47,6 @@ ReactDOM.render(
 | color | 球形颜色，支持颜色渐变 | String[] / String | `#B0E2FF` |
 | borderColor | 边框颜色 | String | `#87CEFA` |
 | textColor | 文字颜色 | String | `#63B8FF` |
-| space | 边框距离球形间距 | Number | `3px` |
+| space | 边框距离球形间距 | Number | `3` |
+| lineWidth | 边框 | Number | `1` |
 | min | 设置球星最小高 | Number | -- |
