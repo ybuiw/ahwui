@@ -1,6 +1,7 @@
 .App {
-  text-align: center;
   padding-top: 100px;
+  height: 1900px;
+  width: 2500px;
 }
 
 .App-logo {
@@ -38,3 +39,9 @@
   justify-content: center;
   color: #fff;
 }
+
+/* .pos {
+  position: fixed;
+  left: 100px;
+  top: 200px;
+} */

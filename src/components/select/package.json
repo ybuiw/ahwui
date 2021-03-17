@@ -1,7 +1,7 @@
 {
-  "name": "@ahwui/react-input",
-  "version": "0.0.4",
-  "description": "Input Progress component",
+  "name": "@ahwui/react-select",
+  "version": "0.0.1",
+  "description": "Select component",
   "main": "lib/cjs/index.js",
   "module": "lib/esm/index.js",
   "repository": {
@@ -10,11 +10,11 @@
   },
   "keywords": [
     "react",
-    "react-input",
-    "react input",
-    "ahwui react-input",
-    "ahwui react input",
-    "ahwui input"
+    "react-select",
+    "react select",
+    "ahwui react-select",
+    "ahwui react select",
+    "ahwui select"
   ],
   "publishConfig": {
     "access": "public"

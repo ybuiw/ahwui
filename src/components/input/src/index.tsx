@@ -7,6 +7,7 @@ export type Size = 'large' | 'default' | 'small';
 
 export interface IInputProps {
   defaultValue?: string;
+  style?: React.CSSProperties;
   size?: Size;
   disabled?: boolean;
   beforefix?: React.ReactNode | string;
@@ -19,6 +20,7 @@ const Input = (props: IInputProps) => {
   const [click, setClick] = useState<boolean>(false);
 
   const {
+    style,
     defaultValue = '',
     size = 'default',
     disabled,
@@ -42,7 +44,7 @@ const Input = (props: IInputProps) => {
   }, [])
 
   return (
-    <div className={cls}>
+    <div className={cls} style={style}>
       {beforefix &&
         <span className={`${prefixCls}-beforefix`}>{beforefix}</span>
       }

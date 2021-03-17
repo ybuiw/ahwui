@@ -5,26 +5,26 @@
   transition: all 0.5s;
   border-radius: 2px;
   font-size: 14px;
-  padding: 0px 11px;
   min-height: 32px;
   box-sizing: border-box;
-  display: flex;
-  align-items: center;
+  background: #fff;
+  display: inline-flex;
   &:hover {
     border-color: @color;
   }
   .i--input-inner {
-    flex: 1;
-    padding: 0;
+    width: 100%;
+    padding: 3px 10px;
     border: none;
     outline: none;
     box-sizing: border-box;
     transition: none;
-    background: #fff;
+    background: transparent;
     vertical-align: initial;
     margin: 0;
     font-size: inherit;
     height: 30px;
+    box-sizing: border-box;
     &:focus{
       box-shadow: none;
     }
@@ -62,6 +62,7 @@
       padding: 0 8px;
       font-size: 14px;
       line-height: 1;
+      word-break: keep-all;
     }
   }
   &.i--input-after {
@@ -74,6 +75,7 @@
       padding: 0 8px;
       font-size: 14px;
       line-height: 1;
+      word-break: keep-all;
     }
   }
 }
