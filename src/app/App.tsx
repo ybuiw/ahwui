@@ -1,10 +1,15 @@
 import React, {} from 'react';
-import { Input, Select, Button } from '../components';
-// import { Select } from 'antd';
+import { Input, Select, Button, Switch } from '../components';
+// import { Switch } from 'antd';
 import './App.css';
 
 const { Option } = Select;
 
+const AA = () => {
+  return (
+    <div className="aaaa">222</div>
+  )
+}
 
 const App = () => {
   const onChange = (v: string) => {
@@ -13,12 +18,17 @@ const App = () => {
   const click = () => {
     console.log(111)
   }
+  const swtichChange = (v: boolean) => {
+    console.log(v)
+  }
   return (
     <div>
       <div className="App" style={{ paddingLeft: '100px'}}>
         <Button type="primary" style={{ marginRight: 5}} onClick={click}>按钮</Button>
         <Button type="primary" style={{ marginRight: 5}}>按钮</Button>
-        <Input placeholder="请输入" />
+        <Switch style={{ marginRight: 5}} 
+          checked={true}
+          checkedNode="开启" unCheckedNode="关闭" onChange={swtichChange} />
         <Input placeholder="请输入" beforefix="总金额" afterfix="元" />
         <Select style={{ width: '200px'}}>
           <Option value="1">测试1</Option>
