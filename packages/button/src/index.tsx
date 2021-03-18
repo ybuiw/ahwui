@@ -20,7 +20,7 @@ export interface IButtonProps {
 }
 
 const Button = (props: IButtonProps) => {
-  const prefixCls: string = 'i-btn';
+  const prefixCls: string = 'i--btn';
   const {
     style,
     type,
@@ -48,16 +48,22 @@ const Button = (props: IButtonProps) => {
   ].filter(Boolean).join(' ');
   return (
     <button style={style} {...others} type={htmlType} disabled={disabled || loading} className={cls}>
-      {loading &&
-        <span className="loadding"></span>
-      }
-      {children &&
-        React.Children.map(children, (child) => {
-          if (React.isValidElement(child)) return child;
-          return (
-            <span> {child} </span>
-          );
-        })}
+      <>
+        {loading &&
+          <span className="loadding"></span>
+        }
+      </>
+      <>
+        {children &&
+          React.Children.map(children, (child) => {
+            if (React.isValidElement(child)) return child;
+            return (
+              <span> {child} </span>
+            );
+          })
+        }
+      </>
+      
     </button>
   )
 }

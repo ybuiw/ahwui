@@ -45,19 +45,22 @@ const Input = (props: IInputProps) => {
 
   return (
     <div className={cls} style={style}>
-      {beforefix &&
-        <span className={`${prefixCls}-beforefix`}>{beforefix}</span>
-      }
-      <input className={`${prefixCls}-inner`} type="text"
-        defaultValue={defaultValue}
-        disabled={disabled}
-        placeholder={placeholder}
-        onFocus={() => setClick(true)}
-        onBlur={() => setClick(false)}
-        onChange={inputChange} />
-      {afterfix &&
-        <span className={`${prefixCls}-afterfix`}>{afterfix}</span>
-      }
+      <div className={`${prefixCls}-flex`}>
+        {beforefix &&
+          <span className={`${prefixCls}-beforefix`}>{beforefix}</span>
+        }
+        <input className={`${prefixCls}-inner`} type="text"
+          defaultValue={defaultValue}
+          disabled={disabled}
+          placeholder={placeholder}
+          onFocus={() => setClick(true)}
+          onBlur={() => setClick(false)}
+          onChange={inputChange} />
+        {afterfix &&
+          <span className={`${prefixCls}-afterfix`}>{afterfix}</span>
+        }
+      </div>
+      
     </div>
   )
 }

@@ -7,6 +7,7 @@ export type Size = 'large' | 'default' | 'small';
 
 export interface IInputProps {
   defaultValue?: string;
+  style?: React.CSSProperties;
   size?: Size;
   disabled?: boolean;
   beforefix?: React.ReactNode | string;
@@ -19,6 +20,7 @@ const Input = (props: IInputProps) => {
   const [click, setClick] = useState<boolean>(false);
 
   const {
+    style,
     defaultValue = '',
     size = 'default',
     disabled,
@@ -42,20 +44,23 @@ const Input = (props: IInputProps) => {
   }, [])
 
   return (
-    <div className={cls}>
-      {beforefix &&
-        <span className={`${prefixCls}-beforefix`}>{beforefix}</span>
-      }
-      <input className={`${prefixCls}-inner`} type="text"
-        defaultValue={defaultValue}
-        disabled={disabled}
-        placeholder={placeholder}
-        onFocus={() => setClick(true)}
-        onBlur={() => setClick(false)}
-        onChange={inputChange} />
-      {afterfix &&
-        <span className={`${prefixCls}-afterfix`}>{afterfix}</span>
-      }
+    <div className={cls} style={style}>
+      <div className={`${prefixCls}-flex`}>
+        {beforefix &&
+          <span className={`${prefixCls}-beforefix`}>{beforefix}</span>
+        }
+        <input className={`${prefixCls}-inner`} type="text"
+          defaultValue={defaultValue}
+          disabled={disabled}
+          placeholder={placeholder}
+          onFocus={() => setClick(true)}
+          onBlur={() => setClick(false)}
+          onChange={inputChange} />
+        {afterfix &&
+          <span className={`${prefixCls}-afterfix`}>{afterfix}</span>
+        }
+      </div>
+      
     </div>
   )
 }

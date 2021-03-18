@@ -1,4 +1,4 @@
-@i-btn:~ "i-btn";
+@i-btn:~ "i--btn";
 
 .button-variant(@color, @background) {
   color: @color;
@@ -57,9 +57,8 @@
   }
 }
 
-.button-size(@font-size, @icon-size, @line-height, @min-height) {
+.button-size(@font-size, @icon-size, @min-height) {
   font-size: @font-size;
-  line-height: @line-height;
   min-height: @min-height;
   .i-icon {
     font-size: @icon-size;
@@ -67,22 +66,15 @@
 }
 
 .@{i-btn} {
-  display: inline-flex;
-  flex-direction: row;
-  align-items: center;
-  -webkit-box-pack: center;
-  justify-content: center;
+  display: inline-block;
   border: none;
   border-radius: 2px;
   cursor: pointer;
   padding: 5px 7px;
   position: relative;
-  vertical-align: middle;
-  text-align: left;
-  line-height: 14px;
   font-size: 14px;
   min-width: 30px;
-  min-height: 32px;
+  min-height: 36px;
   color: #ffffff;
   transition: background-color 0.5s, opacity 1s;
   color: #333333;
@@ -90,6 +82,9 @@
   border: 1px solid #d9d9d9;
   outline: none;
   z-index: 1;
+  box-sizing: border-box;
+  text-align: center;
+  vertical-align:middle;
   &:hover {
     background-color: none !important;
   }
@@ -152,11 +147,11 @@
     font-size: 16px;
   }
   &-large {
-    .button-size(16px, 20px, 16px, 36px);
+    .button-size(16px, 20px, 40px);
   }
   &-small {
     padding: 0 7px;
-    .button-size(12px, 14px, 24px, 20px);
+    .button-size(12px, 14px, 30px);
   }
   & .i-icon:not(:last-child) {
     margin-right: 5px;

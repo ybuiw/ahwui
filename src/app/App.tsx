@@ -1,5 +1,5 @@
 import React, {} from 'react';
-import { Input, Select } from '../components';
+import { Input, Select, Button } from '../components';
 // import { Select } from 'antd';
 import './App.css';
 
@@ -13,12 +13,20 @@ const App = () => {
   return (
     <div>
       <div className="App" style={{ paddingLeft: '100px'}}>
-        <Input  placeholder="请输入" beforefix="请输入请输入" afterfix="元" />
+        <Button type="primary" style={{ marginRight: 5}}>按钮</Button>
+        <Button type="primary" style={{ marginRight: 5}}>按钮</Button>
+        <Input placeholder="请输入" />
+        <Input placeholder="请输入" beforefix="总金额" afterfix="元" />
+        <Select style={{ width: '200px'}}>
+          <Option value="1">测试1</Option>
+          <Option value="2">测试2</Option>
+          <Option value="3">测试3</Option>
+        </Select>
 
         <div className="pos">
-          <Select defaultValue="3" onChange={onChange}>
-            <Option value="1">111111111111111111111111111</Option>
-            <Option value="2">222</Option>
+          <Select defaultValue="" onChange={onChange} allowClear isPos>
+            <Option value="1">1111</Option>
+            <Option disabled value="2">222</Option>
             <Option value="3">333</Option>
             <Option value="4">444</Option>
           </Select>
