@@ -10,10 +10,13 @@ const App = () => {
   const onChange = (v: string) => {
     console.log(v)
   }
+  const click = () => {
+    console.log(111)
+  }
   return (
     <div>
       <div className="App" style={{ paddingLeft: '100px'}}>
-        <Button type="primary" style={{ marginRight: 5}}>按钮</Button>
+        <Button type="primary" style={{ marginRight: 5}} onClick={click}>按钮</Button>
         <Button type="primary" style={{ marginRight: 5}}>按钮</Button>
         <Input placeholder="请输入" />
         <Input placeholder="请输入" beforefix="总金额" afterfix="元" />

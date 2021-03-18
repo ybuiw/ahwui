@@ -1,7 +1,6 @@
 import React from 'react';
 import './index.less';
 
-export type HTMLButtonProps = React.HTMLProps<HTMLButtonElement>;
 export type Type = 'primary' | 'success' | 'warning' | 'danger' | 'light' | 'dark';
 export type Size = 'large' | 'default' | 'small';
 export interface IButtonProps {
@@ -17,6 +16,7 @@ export interface IButtonProps {
   type?: Type;
   size?: Size;
   children: React.ReactNode | string;
+  onClick?: () => void;
 }
 
 const Button = (props: IButtonProps) => {
@@ -33,6 +33,7 @@ const Button = (props: IButtonProps) => {
     loading,
     children,
     htmlType,
+    onClick,
     ...others
   } = props;
   const cls = [
@@ -47,7 +48,7 @@ const Button = (props: IButtonProps) => {
     block ? 'block' : false
   ].filter(Boolean).join(' ');
   return (
-    <button style={style} {...others} type={htmlType} disabled={disabled || loading} className={cls}>
+    <button style={style} {...others} type={htmlType} disabled={disabled || loading} className={cls} onClick={onClick}>
       <>
         {loading &&
           <span className="loadding"></span>

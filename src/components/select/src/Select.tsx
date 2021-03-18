@@ -77,6 +77,7 @@ const Select = (props: SelectProps) => {
 
   useEffect(() => {
     let _pos: any = isPos ? 'fixed' : 'absolute';
+    
     if (!portalElement && visible) {
       let elm = document.createElement('div');
       elm.style.position = _pos;
@@ -84,6 +85,7 @@ const Select = (props: SelectProps) => {
       elm.style.left = '0px';
       elm.style.width = '100%';
       setPortalElement(elm);
+      
       document.body.appendChild(elm);
     }
     if (visible) {
@@ -122,6 +124,7 @@ const Select = (props: SelectProps) => {
   }
 
   const selectClick = () => {
+    console.log(1111)
     let _visible = !visible;
     setVisible(_visible);
   }
