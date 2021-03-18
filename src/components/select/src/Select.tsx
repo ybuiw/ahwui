@@ -124,7 +124,6 @@ const Select = (props: SelectProps) => {
   }
 
   const selectClick = () => {
-    console.log(1111)
     let _visible = !visible;
     setVisible(_visible);
   }
@@ -146,7 +145,7 @@ const Select = (props: SelectProps) => {
     <React.Fragment>
       <div className={cls} style={style}>
         <div className="i--select-flex">
-          <div className="i--select-txt" onClick={selectClick}>
+          <div className="i--select-txt" onClick={selectClick} ref={inputRef}>
             <input type="text"
               defaultValue={name}
               ref={inputRef}
