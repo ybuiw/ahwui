@@ -1,0 +1,30 @@
+{
+  "name": "@ahwui/react-popover",
+  "version": "0.0.1",
+  "description": "Popover component",
+  "main": "lib/cjs/index.js",
+  "module": "lib/esm/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ybuiw/ahwui.git"
+  },
+  "keywords": [
+    "react",
+    "react-popover",
+    "react popover",
+    "ahwui react-popover",
+    "ahwui react popover",
+    "ahwui popover"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": "uub",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  }
+}

@@ -1,5 +1,5 @@
 import React, {} from 'react';
-import { Input, Select, Button, Switch } from '../components';
+import { Input, Select, Button, Switch, Popover } from '../components';
 // import { Switch } from 'antd';
 import './App.css';
 
@@ -49,6 +49,13 @@ const App = () => {
           <Option value="2">测试2</Option>
           <Option value="3">测试3</Option>
         </Select>
+
+        <div>
+          <Popover
+            content="测试">
+            <Button type="primary">按钮</Button>
+          </Popover>
+        </div>
         
         {/* <Select style={{ width: '200px', display: 'inline-block'}} options={[
           {label: '测试1', value: 1},
