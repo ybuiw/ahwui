@@ -30,7 +30,7 @@ const App = () => {
           checked={true}
           checkedNode="开启" unCheckedNode="关闭" onChange={swtichChange} />
         <Input placeholder="请输入" beforefix="总金额" afterfix="元" />
-        <Select style={{ width: '200px'}}>
+        <Select style={{ width: '200px'}} defaultValue="1">
           <Option value="1">测试1</Option>
           <Option value="2">测试2</Option>
           <Option value="3">测试3</Option>

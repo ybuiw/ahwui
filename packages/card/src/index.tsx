@@ -18,8 +18,8 @@ const Card = (props: ICardProps) => {
 
   const {
     className,
-    style,
-    coverStyle,
+    style = {},
+    coverStyle = {},
     title,
     isHover,
     cover,

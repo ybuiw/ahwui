@@ -24,7 +24,7 @@ interface SelectChildProps extends SelectProps {
 const SelectChild = React.forwardRef((props: SelectChildProps, ref: any) => {
   const {
     children,
-    portalStyle,
+    portalStyle = {},
     onCallBack
   } = props;
 
@@ -47,8 +47,8 @@ const Select = (props: SelectProps) => {
   const {
     placeholder = '请选择',
     isPos = false,
-    style,
-    defaultValue,
+    style = {},
+    defaultValue = undefined,
     allowClear,
     children,
     onChange
@@ -147,7 +147,7 @@ const Select = (props: SelectProps) => {
         <div className="i--select-flex">
           <div className="i--select-txt" onClick={selectClick} ref={inputRef}>
             <input type="text"
-              defaultValue={name}
+              defaultValue={name || ''}
               ref={inputRef}
               placeholder={placeholder}
               disabled />
@@ -166,8 +166,8 @@ const Select = (props: SelectProps) => {
         ReactDOM.createPortal(
           <SelectChild
             ref={childRef}
-            portalStyle={portalStyle}
-            active={dv}
+            portalStyle={portalStyle || {}}
+            active={dv || ''}
             {...props}
             onCallBack={callback}
           />, 

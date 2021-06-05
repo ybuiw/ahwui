@@ -22,18 +22,18 @@ export interface IButtonProps {
 const Button = (props: IButtonProps) => {
   const prefixCls: string = 'i--btn';
   const {
-    style,
+    style = {},
     type,
     size,
     active,
-    disabled,
+    disabled = false,
     block,
     link,
     className,
-    loading,
+    loading = false,
     children,
-    htmlType,
-    onClick,
+    htmlType = 'button',
+    onClick = () => {},
     ...others
   } = props;
   const cls = [

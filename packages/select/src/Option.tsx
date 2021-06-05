@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 export interface OptionProps {
   value?: string;
   children?: string;
-  defaultValue?: string;
+  defaultValue?: string | undefined;
   active?: string;
   disabled?: boolean;
   onCallBack?: (value: string, name: string) => void;

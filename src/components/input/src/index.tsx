@@ -20,11 +20,11 @@ const Input = (props: IInputProps) => {
   const [click, setClick] = useState<boolean>(false);
 
   const {
-    style,
+    style = {},
     defaultValue = '',
     size = 'default',
-    disabled,
-    placeholder,
+    disabled = false,
+    placeholder = '请输入',
     beforefix,
     afterfix,
   } = props;

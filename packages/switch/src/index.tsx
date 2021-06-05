@@ -15,7 +15,7 @@ const Switch = (props: SwitchProps) => {
   const prefixCls: string = 'i--switch'
   const {
     className,
-    style,
+    style = {},
     checked,
     disabled,
     checkedNode,
