@@ -1,6 +1,11 @@
 {
-  "name": "root",
+  "version": "0.0.1",
   "private": true,
+  "description": "UI Project",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ybuiw/ahwui.git"
+  },
   "scripts": {
     "prepare": "husky install",
     "watch": "lerna exec --scope ahwui -- npm run watch",

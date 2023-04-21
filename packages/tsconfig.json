@@ -17,5 +17,6 @@
     "jsx": "react-jsx",
     "lib": ["esnext", "dom", "DOM.Iterable"],
     "types": ["jest", "node"]
-  }
+  },
+  "include": ["src/**/*"],
 }
