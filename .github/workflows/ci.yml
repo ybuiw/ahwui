@@ -28,13 +28,13 @@ jobs:
 
       - name: Create Tag
         id: create_tag
-        uses: jaywcjlove/create-tag-action@main
+        uses: jaywcjlove/create-tag-action@v1.3.4
         with:
           package-path: ./packages/package.json
 
 
       - name: Create Release
-        uses: jaywcjlove/create-tag-action@main
+        uses: jaywcjlove/create-tag-action@v1.3.4
         with:
           package-path: ./packages/package.json
           release: true
