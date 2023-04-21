@@ -43,12 +43,11 @@ jobs:
             ${{ steps.changelog.outputs.compareurl }}
             ${{ steps.changelog.outputs.changelog }}
 
-      - name: 📦 ahwui publish to NPM
-        uses: kktjs/npm-publish@main
+      - name: 📦 publish to NPM
+        uses: JS-DevTools/npm-publish@v1
         with:
           token: ${{ secrets.NPM_TOKEN }}
-          workspaces: |
-            packages
+          package: ./packages/package.json
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
