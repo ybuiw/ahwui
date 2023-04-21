@@ -1,31 +1,27 @@
-name: CI
-
+name: Build & Deploy
 on:
   push:
     branches:
       - main
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
+  build-deploy:
+    runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
           node-version: 16
 
-      - name: Look Changelog
-        uses: jaywcjlove/changelog-generator@main
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          filter-author: (renovate-bot|Renovate Bot)
-          filter: '[R|r]elease[d]\s+[v|V]\d(\.\d+){0,2}'
-
       - run: npm install
       - run: npm run build
-      # 生成文档
-      - run: export CI=false && npm run build:website
+      - run: npm run build:website
 
+      - name: Is a tag created auto?
+        id: create_tag
+        uses: jaywcjlove/create-tag-action@main
+        with:
+          package-path: ./packages/package.json
 
       - name: Generate Changelog
         id: changelog
@@ -33,25 +29,30 @@ jobs:
         if: steps.create_tag.outputs.successful
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
+          head-ref: ${{ steps.create_tag.outputs.version }}
           filter-author: (renovate-bot|Renovate Bot)
           filter: '[R|r]elease[d]\s+[v|V]\d(\.\d+){0,2}'
 
-      - run: mkdir -p website/build/zip
 
-            
-      - name: Generate Contributors Images
-        uses: jaywcjlove/github-action-contributors@main
+      - name: Create Release
+        uses: jaywcjlove/create-tag-action@v1.3.4
         with:
-          filter-author: (renovate\[bot\]|actions-user|renovate-bot|dependabot\[bot\])
-          output: ./website/build/CONTRIBUTORS.svg
-          avatarSize: 42
+          package-path: ./packages/package.json
+          release: true
+          body: |
+            [![](https://img.shields.io/badge/Open%20in-unpkg-blue)](https://uiwjs.github.io/npm-unpkg/#/pkg/@uiw/react-native@${{steps.changelog.outputs.version}}/file/README.md) [![npm version](https://img.shields.io/npm/v/@uiw/react-native.svg)](https://www.npmjs.com/package/@uiw/react-native) [![npm bundle size](https://img.shields.io/bundlephobia/minzip/@uiw/react-native)](https://bundlephobia.com/result?p=@uiw/react-native@${{steps.changelog.outputs.version}})
+            ${{ steps.changelog.outputs.compareurl }}
+            ${{ steps.changelog.outputs.changelog }}
 
-      # 生成案例网站
-      - name: Deploy Website
+      - run: git status
+      - name: 📦  ahwui publish to NPM
+        uses: JS-DevTools/npm-publish@v1
+        with:
+          token: ${{ secrets.NPM_TOKEN }}
+          package: ./packages/package.json
+
+      - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./website/build
-
-      - run: npm install @jsdevtools/npm-publish -g
-      - run: npm-publish --token="${{ secrets.NPM_TOKEN }}" ./packages/package.json
