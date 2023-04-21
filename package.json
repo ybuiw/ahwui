@@ -1,7 +1,7 @@
 {
-  "version": "0.0.1",
   "private": true,
   "description": "UI Project",
+  "author": "jaywcjlove",
   "repository": {
     "type": "git",
     "url": "https://github.com/ybuiw/ahwui.git"
