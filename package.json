@@ -8,8 +8,8 @@
   },
   "scripts": {
     "prepare": "husky install",
-    "watch": "lerna exec --scope ahwui -- npm run watch",
-    "build": "lerna exec --scope ahwui -- tsbb build src/*.ts --use-babel",
+    "watch": "lerna exec --scope @ahwui/ui -- npm run watch",
+    "build": "lerna exec --scope @ahwui/ui -- tsbb build src/*.ts --use-babel",
     "------------": "----------------案例------------------------------",
     "start": "lerna exec --scope website -- npm run start",
     "build:website": "lerna exec --scope website -- npm run build",
