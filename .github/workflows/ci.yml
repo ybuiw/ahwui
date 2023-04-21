@@ -15,7 +15,7 @@ jobs:
           node-version: 16
 
       - name: Look Changelog
-        uses: jaywcjlove/changelog-generator@v1.4.8
+        uses: jaywcjlove/changelog-generator@main
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           head-ref: ${{ steps.create_tag.outputs.version }}
@@ -28,13 +28,13 @@ jobs:
 
       - name: Create Tag
         id: create_tag
-        uses: jaywcjlove/create-tag-action@v1.3.4
+        uses: jaywcjlove/create-tag-action@main
         with:
           package-path: ./packages/package.json
 
 
       - name: Create Release
-        uses: jaywcjlove/create-tag-action@v1.3.4
+        uses: jaywcjlove/create-tag-action@main
         with:
           package-path: ./packages/package.json
           release: true
@@ -44,10 +44,11 @@ jobs:
             ${{ steps.changelog.outputs.changelog }}
 
       - name: 📦 publish to NPM
-        uses: JS-DevTools/npm-publish@v1
+        uses: kktjs/npm-publish@main
         with:
           token: ${{ secrets.NPM_TOKEN }}
-          package: ./packages/package.json
+          workspaces: |
+            packages
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
