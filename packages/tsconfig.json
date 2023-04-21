@@ -13,6 +13,7 @@
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "removeComments": false,
+    "baseUrl": "./",
     "jsx": "react-jsx",
     "lib": ["esnext", "dom", "DOM.Iterable"],
     "types": ["jest", "node"]

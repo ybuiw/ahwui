@@ -1,0 +1,37 @@
+{
+  "name": "website",
+  "version": "0.0.1",
+  "description": "案例",
+  "private": true,
+  "scripts": {
+    "start": "kktp start",
+    "build": "kktp build",
+    "doc": "kktp doc --entry=./build --local",
+    "test": "kktp test --env=jsdom",
+    "coverage": "kktp test --env=jsdom --coverage"
+  },
+  "repository": "https://github.com/kktjs/kkt-pro",
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@kkt/pro": "^1.0.10"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

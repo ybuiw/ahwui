@@ -1,14 +1,8 @@
-lib
-cjs
-ejs
-esm
-dist
 build
 node_modules
 npm-debug.log*
 package-lock.json
-yarn.lock
-lerna-debug.log
+src/.kktp
 .eslintcache
 .DS_Store
 .cache

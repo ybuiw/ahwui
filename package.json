@@ -1,58 +1,34 @@
 {
-  "name": "ahwui",
-  "version": "0.0.1",
-  "description": "Use an example of TypeScript.",
+  "name": "root",
   "private": true,
   "scripts": {
-    "start": "cross-env PORT=6001 kkt start",
-    "build": "kkt build",
-    "test": "kkt test --env=jsdom",
-    "test:coverage": "kkt test --env=jsdom --coverage",
-    "type": "npm run t:cjs && npm run t:esm",
-    "t:esm": "lerna exec --scope @ahwui/* -- tsbb types --outDir lib/esm --target ESNEXT",
-    "t:cjs": "lerna exec --scope @ahwui/* -- tsbb types --outDir lib/cjs --target ESNEXT",
-    "b:css": "lerna exec --scope @ahwui/* -- compile-less -d src -o lib/esm",
-    "b:lib": "lerna exec --scope @ahwui/* -- tsbb build --target react",
-    "watch": "lerna exec --scope @ahwui/* -- tsbb watch --target react",
-    "b": "npm run b:lib && npm run type && npm run b:css",
-    "clean": "lerna clean",
-    "publish": "lerna publish from-package"
+    "prepare": "husky install",
+    "watch": "lerna exec --scope ahwui -- npm run watch",
+    "build": "lerna exec --scope ahwui -- tsbb build src/*.ts --use-babel",
+    "------------": "----------------案例------------------------------",
+    "start": "lerna exec --scope website -- npm run start",
+    "build:website": "lerna exec --scope website -- npm run build",
+    "version": "lerna version --force-publish=* --no-changelog --no-git-tag-version --no-push",
+    "prettier": "prettier --write \"**/*.{js,jsx,tsx,ts,less,md,json}\"",
+    "remove": "lerna exec \"rm -rf node_modules build package-lock.json\"",
+    "clean": "lerna clean --yes && npm run remove"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/ybuiw/ahwui.git"
+  "lint-staged": {
+    "*.{js,jsx,tsx,ts,less,md,json}": "prettier --write"
   },
-  "author": "uub",
-  "license": "MIT",
-  "dependencies": {
-    "@ant-design/icons": "^4.5.0",
-    "antd": "^4.14.0",
-    "compile-less-cli": "^1.6.0",
-    "react": "17.0.1",
-    "react-dom": "17.0.1",
-    "tsbb": "^2.0.5",
-    "web-vitals": "1.1.0"
-  },
+  "workspaces": [
+    "website",
+    "packages"
+  ],
   "devDependencies": {
-    "@kkt/less-modules": "6.6.2",
-    "@types/jest": "24.9.1",
-    "@types/react": "17.0.0",
-    "@types/react-dom": "17.0.0",
-    "@types/react-transition-group": "^4.4.1",
-    "kkt": "6.6.2",
-    "lerna": "^3.22.1",
-    "react-transition-group": "^4.4.1"
+    "ajv": "~8.12.0",
+    "husky": "^8.0.2",
+    "lerna": "^6.6.1",
+    "lint-staged": "^13.2.1",
+    "prettier": "^2.8.7",
+    "tsbb": "^4.1.5"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "engines": {
+    "node": ">=16.0.0"
   }
 }
