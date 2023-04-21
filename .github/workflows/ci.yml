@@ -6,7 +6,7 @@ on:
 
 jobs:
   build-deploy:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
@@ -35,7 +35,7 @@ jobs:
 
 
       - name: Create Release
-        uses: jaywcjlove/create-tag-action@v1.3.4
+        uses: jaywcjlove/create-tag-action@main
         with:
           package-path: ./packages/package.json
           release: true
