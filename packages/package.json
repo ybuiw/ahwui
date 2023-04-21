@@ -1,12 +1,11 @@
 {
   "name": "@ahwui/ui",
   "version": "0.0.1",
-  "description": "Divider component",
-  "author": "Kenny Wong <wowohoo@qq.com>",
-  "homepage": "https://github.com/uiwjs/uiw-admin/tree/master/packages/user-login#readme",
+  "description": "ui component",
+  "homepage": "https://github.com/ybuiw/ahwui/tree/master#readme",
   "repository": {
     "type": "git",
-    "url": "https://github.com/uiwjs/uiw-admin.git"
+    "url": "https://github.com/ybuiw/ahwui.git"
   },
   "license": "MIT",
   "main": "lib/index.js",
