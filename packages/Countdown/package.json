@@ -1,6 +1,6 @@
 {
   "name": "@ahwui/count-down",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "ui component",
   "homepage": "https://github.com/ybuiw/ahwui/tree/master#readme",
   "repository": {
@@ -43,8 +43,8 @@
     "@types/react": "^18.0.37",
     "@types/react-dom": "^18.0.11",
     "@types/styled-components": "^5.1.26",
-    "styled-components": "^5.3.5",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "styled-components": "^5.3.5"
   }
 }
