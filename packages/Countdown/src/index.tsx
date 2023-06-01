@@ -22,7 +22,7 @@ export interface CountdownProps {
 
 const CountDown = (props: CountdownProps) => {
   const {
-    seconds = 4,
+    seconds = 60,
     isRun = false,
     text = '获取倒计时',
     extraText = 's',
