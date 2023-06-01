@@ -1,15 +1,15 @@
 {
   "private": true,
   "description": "UI Project",
-  "author": "jaywcjlove",
+  "author": "yaob421123",
   "repository": {
     "type": "git",
     "url": "https://github.com/ybuiw/ahwui.git"
   },
   "scripts": {
     "prepare": "husky install",
-    "watch": "lerna exec --scope @ahwui/ui -- npm run watch",
-    "build": "lerna exec --scope @ahwui/ui -- tsbb build src/*.ts --use-babel",
+    "watch": "lerna exec --scope @ahwui/* -- tsbb watch src/*.{ts,tsx} --use-babel",
+    "build": "lerna exec --scope @ahwui/* -- tsbb build src/*.{ts,tsx} --use-babel",
     "------------": "----------------案例------------------------------",
     "start": "lerna exec --scope website -- npm run start",
     "build:website": "lerna exec --scope website -- npm run build",
@@ -23,7 +23,7 @@
   },
   "workspaces": [
     "website",
-    "packages"
+    "packages/**"
   ],
   "devDependencies": {
     "ajv": "~8.12.0",

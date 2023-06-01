@@ -1,5 +1,5 @@
 {
-  "name": "@ahwui/ui",
+  "name": "@ahwui/count-down",
   "version": "0.0.1",
   "description": "ui component",
   "homepage": "https://github.com/ybuiw/ahwui/tree/master#readme",
@@ -8,8 +8,14 @@
     "url": "https://github.com/ybuiw/ahwui.git"
   },
   "license": "MIT",
-  "main": "lib/index.js",
-  "module": "esm/index.js",
+  "main": "./cjs/index.js",
+  "module": "./esm/index.js",
+  "scripts": {
+    "watch": "tsbb watch src/*.tsx --use-babel",
+    "build": "tsbb build src/*.tsx --use-babel",
+    "test": "tsbb test --env=jsdom",
+    "coverage": "tsbb test --env=jsdom --coverage --bail"
+  },
   "files": [
     "lib",
     "esm",

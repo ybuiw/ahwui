@@ -1,17 +1,19 @@
-Basic Example for auto-routes
+Basic Example for TypeScript
 ===
+
+Use an example of `TypeScript`.
 
 ## Quick Start
 
 ```bash
-$ npx create-kktp my-app -e auto-routes
+$ npx create-kkt my-app -e typescript
 cd my-app
 npm install
 ```
 
 ## Open in CodeSandbox
 
-[![Open in CodeSandbox](https://img.shields.io/badge/Open%20in-CodeSandbox-blue?logo=codesandbox)](https://codesandbox.io/s/github/kktjs/kktp/tree/main/examples/auto-routes)
+[![Open in CodeSandbox](https://img.shields.io/badge/Open%20in-CodeSandbox-blue?logo=codesandbox)](https://codesandbox.io/s/github/kktjs/kkt/tree/master/example/typescript)
 
 ## Development
 
