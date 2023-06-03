@@ -29,6 +29,7 @@
     "react-dom": ">=17.x"
   },
   "dependencies": {
-    "@ahwui/count-down": "^0.0.3"
+    "@ahwui/count-down": "^0.0.3",
+    "@ahwui/drawer": "^0.0.3"
   }
 }

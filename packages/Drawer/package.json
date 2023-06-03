@@ -1,5 +1,5 @@
 {
-  "name": "@ahwui/count-down",
+  "name": "@ahwui/drawer",
   "version": "0.0.3",
   "description": "ui component",
   "homepage": "https://github.com/ybuiw/ahwui/tree/master#readme",
@@ -28,9 +28,9 @@
     "react.js",
     "react",
     "react-component",
-    "count-down",
-    "CountDown",
-    "@ahwui/count-down"
+    "react-drawer",
+    "drawer",
+    "@ahwui/drawer"
   ],
   "peerDependencies": {
     "@babel/runtime": ">=7.10.0",
